@@ -1,0 +1,9 @@
+// LOCALHOST
+// All Results
+###GET http://localhost:8080/
+//Travis's Info
+###GET http://localhost:8080/663419fb872ddcf740b9e5ed
+//Eleanor's Info
+###GET http://localhost:8080/663419fb872ddcf740b9e5ee
+//Bridget's Info
+###GET http://localhost:8080/663419fb872ddcf740b9e5ef

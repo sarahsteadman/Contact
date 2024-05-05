@@ -1,9 +1,27 @@
 // LOCALHOST
 // All Results
-###GET http://localhost:8080/
+###
+GET http://localhost:8080/
 //Travis's Info
-###GET http://localhost:8080/663419fb872ddcf740b9e5ed
+###
+GET http://localhost:8080/663419fb872ddcf740b9e5ed
 //Eleanor's Info
-###GET http://localhost:8080/663419fb872ddcf740b9e5ee
+###
+GET http://localhost:8080/663419fb872ddcf740b9e5ee
 //Bridget's Info
-###GET http://localhost:8080/663419fb872ddcf740b9e5ef
+###
+GET http://localhost:8080/663419fb872ddcf740b9e5ef
+
+// RENDER
+// All Results
+###
+GET https://contact-8pjw.onrender.com/
+//Travis's Info
+###
+GET https://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ed
+//Eleanor's Info
+###
+GET https://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ee
+//Bridget's Info
+###
+GET https://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ef

@@ -26,6 +26,53 @@ const getSingle = async (req, res, next) => {
     });
 };
 
+const create = async (req, res, next) => {
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+    const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
 
+    if (response.acknowledged) {
+        res.status(201).json(response);
+    } else {
+        res.status(500).json(response.error || 'Error! Contact not added.');
+    }
+};
 
-module.exports = { getAll, getSingle };
+const update = async (req, res, next) => {
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+
+    const idString = String(req.params.id);
+    const userId = new ObjectId(idString);
+    const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
+
+    console.log(response);
+    if (response.modifiedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Error! Contact not updated.');
+    }
+};
+
+const del = async (req, res, next) => {
+    const idString = String(req.params.id);
+    const userId = new ObjectId(idString);
+    const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true); console.log(response);
+    if (response.deletedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Error! Unable to delete!');
+    }
+};
+
+module.exports = { getAll, getSingle, create, update, del };

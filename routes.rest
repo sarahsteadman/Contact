@@ -11,6 +11,45 @@ GET http://localhost:8080/663419fb872ddcf740b9e5ee
 //Bridget's Info
 ###
 GET http://localhost:8080/663419fb872ddcf740b9e5ef
+//Post
+###
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+"firstName":"Logan", 
+"lastName":"Steadman", 
+"email":"None", 
+"favoriteColor":"Unknown", 
+"birthday":"06/01/2025"
+}
+###
+PUT http://localhost:8080/663419fb872ddcf740b9e5ef
+Content-Type: application/json
+
+  {
+    "_id": "663419fb872ddcf740b9e5ef",
+    "firstName": "Bridgey",
+    "lastName": "Steadman",
+    "email": "None",
+    "favoriteColor": "Yellow",
+    "birthday": "05/20/2020"
+  }
+###
+PUT http://localhost:8080/663419fb872ddcf740b9e5ef
+Content-Type: application/json
+
+  {
+    "_id": "663419fb872ddcf740b9e5ef",
+    "firstName": "Bridgey",
+    "lastName": "Steadman",
+    "email": "None",
+    "favoriteColor": "none",
+    "birthday": "07/30/2020"
+  }
+###
+DELETE http://localhost:8080/663c15409717ebb94ada5c14
+###
 
 // RENDER
 // All Results
@@ -25,3 +64,41 @@ GET https://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ee
 //Bridget's Info
 ###
 GET https://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ef
+###
+POST http://contact-8pjw.onrender.com/
+Content-Type: application/json
+
+{
+"firstName":"Logan", 
+"lastName":"Steadman", 
+"email":"None", 
+"favoriteColor":"Unknown", 
+"birthday":"06/01/2025"
+}
+###
+PUT http://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ef
+Content-Type: application/json
+
+  {
+    "_id": "663419fb872ddcf740b9e5ef",
+    "firstName": "Bridget",
+    "lastName": "Steadman",
+    "email": "None",
+    "favoriteColor": "Yellow",
+    "birthday": "05/20/2020"
+  }
+###
+PUT http://contact-8pjw.onrender.com/663419fb872ddcf740b9e5ef
+Content-Type: application/json
+
+  {
+    "_id": "663419fb872ddcf740b9e5ef",
+    "firstName": "Bridget",
+    "lastName": "Steadman",
+    "email": "None",
+    "favoriteColor": "none",
+    "birthday": "07/30/2020"
+  }
+###
+DELETE http://contact-8pjw.onrender.com/663c15409717ebb94ada5c14
+###

@@ -11,7 +11,7 @@ const getAll = async (req, res, next) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
     });
-
+    console.log(res.statusCode);
 };
 
 const getSingle = async (req, res, next) => {
@@ -24,6 +24,7 @@ const getSingle = async (req, res, next) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
     });
+    console.log(res.statusCode);
 };
 
 const create = async (req, res, next) => {
@@ -41,6 +42,8 @@ const create = async (req, res, next) => {
     } else {
         res.status(500).json(response.error || 'Error! Contact not added.');
     }
+    console.log(res.statusCode);
+
 };
 
 const update = async (req, res, next) => {
@@ -56,23 +59,26 @@ const update = async (req, res, next) => {
     const userId = new ObjectId(idString);
     const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
 
-    console.log(response);
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
         res.status(500).json(response.error || 'Error! Contact not updated.');
     }
+    console.log(res.statusCode);
 };
 
 const del = async (req, res, next) => {
     const idString = String(req.params.id);
     const userId = new ObjectId(idString);
-    const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true); console.log(response);
+    const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+    console.log(response);
     if (response.deletedCount > 0) {
-        res.status(204).send();
+        res.status(200).send();
     } else {
         res.status(500).json(response.error || 'Error! Unable to delete!');
     }
+    console.log(res.statusCode);
+
 };
 
 module.exports = { getAll, getSingle, create, update, del };

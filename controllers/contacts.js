@@ -11,7 +11,7 @@ const getAll = async (req, res, next) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
     });
-    console.log(res.statusCode);
+
 };
 
 const getSingle = async (req, res, next) => {
@@ -24,7 +24,7 @@ const getSingle = async (req, res, next) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
     });
-    console.log(res.statusCode);
+
 };
 
 const create = async (req, res, next) => {

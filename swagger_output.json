@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "https://contact-8pjw.onrender.com",
+  "host": "contact-8pjw.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
